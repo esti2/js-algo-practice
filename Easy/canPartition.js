@@ -15,8 +15,9 @@ Multiple solutions can exist, any solution is sufficient to return true.
 
 function canPartition(myArr) {
   //your code
-  let sum = 0;
+  let sum = 1;
   for (let index = 0; index < myArr.length; index++) {
+    sum = 1;
     // if(myArr[index])
     for (let y = 0; y < myArr.length; y++) {
       if (index != y)
