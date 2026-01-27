@@ -30,7 +30,26 @@ Notes
 All inputs are strings, no uppercases and all output must be strings.
 */
 
-function encrypt( /*args*/ ) {
+function encrypt(word) {
+  let temp = "";
+  let result = "";
+  temp = word.split('').reverse().join('');
+  for (let index = 0; index < temp.length; index++) {
+    if (temp[index] === "a")
+      result += "0";
+    else if (temp[index] === "e")
+      result += "1";
+    else if (temp[index] === "i")
+      result += "2";
+    else if (temp[index] === "o")
+      result += "2";
+    else if (temp[index] === "u")
+      result += "3";
+    else
+      result += temp[index];
+  }
+  result += "aca";
+  return result;
   //your code
 }
 

@@ -18,7 +18,13 @@ factorChain([2, 4, 6, 7, 12]) ➞ false
 factorChain([10, 1]) ➞ false
 */
 
-function factorChain( /*args*/ ) {
+function factorChain(myArr) {
+  for (let index = 0; index < myArr.length - 1; index++) {
+    if (!(myArr[index + 1] % myArr[index] === 0))
+      return false;
+
+  }
+  return true;
   //your code
 }
 
