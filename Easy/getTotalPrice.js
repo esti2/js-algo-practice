@@ -40,8 +40,14 @@ Notes
 There might be a floating point precision problem in here...
 */
 
-function getTotalPrice( /*args*/ ) {
-  //your code
+function getTotalPrice(myArr) {
+  let totalPrice = 0.00;
+  for (let index = 0; index < myArr.length; index++) {
+    const element = myArr[index];
+    totalPrice += (element["quantity"] * element["price"]);
+  }
+  return Number(totalPrice.toFixed(1));
+
 }
 
 exports.solution = getTotalPrice;

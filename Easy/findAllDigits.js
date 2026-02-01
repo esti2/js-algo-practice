@@ -15,8 +15,32 @@ Notes
 The digits can be discovered in any order.
 */
 
-function findAllDigits( /*args*/ ) {
-  //your code
+function findAllDigits(myArr) {
+  let arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  let sum = 0;
+  for (let index = 0; index < myArr.length; index++) {
+
+    arr[Math.trunc(myArr[index] / 1000)]++;
+    arr[Math.trunc(myArr[index] / 100) % 10]++;
+    arr[Math.trunc(myArr[index] / 10) % 10]++;
+    arr[myArr[index] % 10]++;
+
+    for (let i = 0; i < arr.length; i++) {
+      if (!(arr[i] >= 1)) {
+        sum = 0;
+        break;
+      }
+      else
+        sum++;
+    }
+    if (sum === 10)
+      return myArr[index];
+
+  }
+  return "Missing digits!";
+
+
 }
+
 
 exports.solution = findAllDigits;
